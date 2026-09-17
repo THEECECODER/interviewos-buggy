@@ -157,11 +157,32 @@ export function AuthShell({ mode }: AuthShellProps) {
         .auth-form .button { width: 100%; min-height: 40px; border-radius: 4px; background: #c95231; font-size: 11px; }
         .auth-footer-link { align-self: center; margin-top: 16px; color: #484b4e; font-size: 10px; }
         @media (max-width: 760px) {
-          .auth-screen { grid-template-columns: 1fr; }
-          .auth-visual { min-height: 250px; padding: 28px; }
-          .auth-visual-bottom { margin-top: 56px; }
-          .auth-visual-bottom p { font-size: 15px; }
-          .auth-panel { padding: 44px 24px; }
+          .auth-screen {
+            display: flex;
+            flex-direction: column;
+            min-height: 100svh;
+          }
+          .auth-visual {
+            min-height: 0;
+            height: 180px;
+            flex: 0 0 180px;
+            justify-content: flex-start;
+            padding: 24px;
+          }
+          .auth-brand { gap: 8px; }
+          .auth-brand strong { font-size: 17px; }
+          .auth-brand small { font-size: 8px; }
+          .auth-visual-bottom { display: none; }
+          .auth-panel {
+            flex: 1;
+            display: grid;
+            place-items: start center;
+            padding: 40px 24px 32px;
+          }
+          .auth-form { width: 100%; max-width: 430px; }
+          .auth-form h1 { font-size: 34px; }
+          .auth-subtitle { margin-bottom: 30px; }
+          .auth-form label { margin-bottom: 20px; }
         }
       `}</style>
     </main>
